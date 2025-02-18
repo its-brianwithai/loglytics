@@ -30,10 +30,9 @@ class Analytic {
 class CustomAnalytic extends Analytic {
   CustomAnalytic({
     required String name,
-    Map<String, Object>? parameters,
+    super.parameters,
   }) : super(
           subject: name,
-          parameters: parameters,
           type: AnalyticsTypes.none,
         );
 

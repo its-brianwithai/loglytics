@@ -1,3 +1,8 @@
+## 0.15.0
+
+* **⚠️ Breaking:** Updated get_it to 8.0.3 (from 7.7.0).
+* **⚠️ Breaking:** Updated flutter_lints to 5.0.0 (from 3.0.2).
+
 ## 0.14.1
 
 * **✨ New:** Added `AnalyticsTypes.pressed`.

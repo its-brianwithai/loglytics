@@ -1,4 +1,4 @@
-library loglytics;
+library;
 
 // src/analytics
 export 'src/analytics/analytic.dart';
