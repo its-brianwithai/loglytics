@@ -55,16 +55,15 @@ We use a consistent class structure with clearly marked sections to make our cod
 
 // 🏗️ HELPERS ------------------------------------------------------------------------------- \\
 // For complex operations and business logic
-- Business logic methods
-- Complex calculations
-- Data transformations
-- Helper functions
-- Formatters
+- Helper functions used by other functions
 
 // 🪄 MUTATORS ------------------------------------------------------------------------------ \\
 // For state mutations and updates
 - Methods that change state
 - Update operations
+- Business logic methods
+- Complex calculations
+- Data transformations
 - API calls
 ```
 
