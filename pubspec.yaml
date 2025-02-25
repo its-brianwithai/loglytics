@@ -18,18 +18,3 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter:
-
-# The following section is automatically managed by toggle_dependencies.dart
-dependency_overrides:
-  informers:
-    path: ../informers
-  loglytics:
-    path: 
-  turbo_firestore_api:
-    path: ../turbo_firestore_api
-  turbo_response:
-    path: ../turbo_response
-  veto:
-    path: ../veto
-  shadcn_flutter:
-    path: ../../forks/shadcn_flutter
