@@ -28,8 +28,7 @@ abstract class AnalyticsInterface {
 }
 
 class IndividualUsage {
-  late final Loglytics loglytics =
-      Loglytics.create(location: runtimeType.toString());
+  late final Loglytics loglytics = Loglytics.create(location: runtimeType.toString());
   late final Log log = Log(location: runtimeType.toString());
   late final AnalyticsService analyticsService = AnalyticsService();
 }

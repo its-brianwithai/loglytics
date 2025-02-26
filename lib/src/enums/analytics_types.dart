@@ -203,6 +203,5 @@ extension AnalyticsTypesHelpers on AnalyticsTypes {
     required String subject,
     Map<String, Object>? parameters,
   }) =>
-      Analytic(subject: subject, type: this, parameters: parameters)
-          .toCustomAnalytic;
+      Analytic(subject: subject, type: this, parameters: parameters).toCustomAnalytic;
 }

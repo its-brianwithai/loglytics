@@ -45,8 +45,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with Loglytics<CounterAnalytics> {
+class _MyHomePageState extends State<MyHomePage> with Loglytics<CounterAnalytics> {
   int _counter = 0;
 
   @override
@@ -54,8 +53,7 @@ class _MyHomePageState extends State<MyHomePage>
     widget.log.info('Test the individual logger one two three');
     widget.loglytics.log.info('Test the individual loglytics one two three');
     widget.loglytics.analytics.service.changed(subject: 'nothing');
-    widget.loglytics.analytics.service
-        .userProperty(property: 'this', value: 'is_so_cool');
+    widget.loglytics.analytics.service.userProperty(property: 'this', value: 'is_so_cool');
     analytics.viewPage();
     super.initState();
   }

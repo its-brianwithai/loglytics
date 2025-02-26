@@ -6,14 +6,11 @@ class EventBus {
   static final EventBus _eventBus = EventBus._();
   factory EventBus() => _eventBus;
 
-  late final StreamController<Future<void>> _crashReports =
-      StreamController.broadcast();
+  late final StreamController<Future<void>> _crashReports = StreamController.broadcast();
   StreamSubscription? _crashReportsSubscription;
-  late final StreamController<Future<void>> _analytics =
-      StreamController.broadcast();
+  late final StreamController<Future<void>> _analytics = StreamController.broadcast();
   StreamSubscription? _analyticsSubscription;
-  late final StreamController<Future<void>> _combinedEvents =
-      StreamController.broadcast();
+  late final StreamController<Future<void>> _combinedEvents = StreamController.broadcast();
   StreamSubscription? _combinedEventsSubscription;
 
   /// Adds a crash report to the event stream.
@@ -55,12 +52,10 @@ class EventBus {
         _combinedEventsSubscription = _combinedEvents.stream.listen(
           (future) async => await future,
           onError: (error, stackTrace) async {
-            const message =
-                '[EventBus] Combined events stream caught an error!';
+            const message = '[EventBus] Combined events stream caught an error!';
             debugPrint(message);
             await Loglytics._crashReportsInterface?.log(message);
-            await Loglytics._crashReportsInterface
-                ?.recordError(error, stackTrace, fatal: true);
+            await Loglytics._crashReportsInterface?.recordError(error, stackTrace, fatal: true);
           },
           onDone: () async {
             const message = '[EventBus] Combined events stream is done!';
@@ -74,12 +69,10 @@ class EventBus {
         _crashReportsSubscription ??= _crashReports.stream.listen(
           (future) async => await future,
           onError: (error, stackTrace) async {
-            const message =
-                '[EventBus] CrashReports events stream caught an error!';
+            const message = '[EventBus] CrashReports events stream caught an error!';
             debugPrint(message);
             await Loglytics._crashReportsInterface?.log(message);
-            await Loglytics._crashReportsInterface
-                ?.recordError(error, stackTrace, fatal: true);
+            await Loglytics._crashReportsInterface?.recordError(error, stackTrace, fatal: true);
           },
           onDone: () async {
             const message = '[EventBus] CrashReports events stream is done!';
@@ -92,12 +85,10 @@ class EventBus {
         _analyticsSubscription ??= _analytics.stream.listen(
           (future) async => await future,
           onError: (error, stackTrace) async {
-            const message =
-                '[EventBus] Analytics events stream caught an error!';
+            const message = '[EventBus] Analytics events stream caught an error!';
             debugPrint(message);
             await Loglytics._crashReportsInterface?.log(message);
-            await Loglytics._crashReportsInterface
-                ?.recordError(error, stackTrace, fatal: true);
+            await Loglytics._crashReportsInterface?.recordError(error, stackTrace, fatal: true);
           },
           onDone: () async {
             const message = '[EventBus] Analytics events stream is done!';

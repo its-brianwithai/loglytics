@@ -32,12 +32,10 @@ class Log {
   static bool broadcastLogs = false;
 
   /// Used to expose all crash reports logs.
-  static final StreamController<String> crashReportsObserver =
-      StreamController.broadcast();
+  static final StreamController<String> crashReportsObserver = StreamController.broadcast();
 
   /// Used to expose all analytics logs.
-  static final StreamController<String> analyticsObserver =
-      StreamController.broadcast();
+  static final StreamController<String> analyticsObserver = StreamController.broadcast();
 
   // --------------- REGULAR --------------- REGULAR --------------- REGULAR --------------- \\
 
