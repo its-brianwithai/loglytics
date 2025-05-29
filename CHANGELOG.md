@@ -1,3 +1,10 @@
+## 0.16.0
+
+* **✨ New:** Added `AnalyticsTypes.edited` with corresponding `AnalyticsService.edited()` method.
+* **✨ New:** Added `AnalyticsTypes.assigned` with corresponding `AnalyticsService.assigned()` method.
+* **✨ New:** Added `AnalyticsTypes.unassigned` with corresponding `AnalyticsService.unassigned()` method.
+* **⚠️ Breaking:** Updated flutter_lints to 6.0.0 (from 5.0.0).
+
 ## 0.15.0
 
 * **⚠️ Breaking:** Updated get_it to 8.0.3 (from 7.7.0).

@@ -24,7 +24,8 @@ class AnalyticsService {
   /// [_crashReportsInterface].
   void userId({required String userId}) {
     _eventBus.tryAddAnalytic(Loglytics._analyticsInterface?.setUserId(userId));
-    _eventBus.tryAddCrashReport(Loglytics._crashReportsInterface?.setUserIdentifier(userId));
+    _eventBus.tryAddCrashReport(
+        Loglytics._crashReportsInterface?.setUserIdentifier(userId));
     _log?.analytic(
       name: 'user_id',
       value: userId,
@@ -57,7 +58,8 @@ class AnalyticsService {
   }
 
   /// Main method used for sending for the more flexible [CustomAnalytic]s.
-  void custom({required CustomAnalytic analytic}) => _logCustomAnalytic(analytic);
+  void custom({required CustomAnalytic analytic}) =>
+      _logCustomAnalytic(analytic);
 
   /// Sends an [AnalyticsTypes.tapped] based on given [subject] and possible [parameters].
   void tapped({
@@ -332,7 +334,9 @@ class AnalyticsService {
       parameters: parameters,
       type: AnalyticsTypes.input,
     );
-    if (_firstInput == null || !onlyFirstValue || !analytic.equals(_firstInput)) {
+    if (_firstInput == null ||
+        !onlyFirstValue ||
+        !analytic.equals(_firstInput)) {
       _logAnalytic(analytic);
     }
     _firstInput = analytic;
@@ -699,6 +703,45 @@ class AnalyticsService {
           subject: subject,
           parameters: parameters,
           type: AnalyticsTypes.added,
+        ),
+      );
+
+  /// Sends an [AnalyticsTypes.edited] based on given [subject] and possible [parameters].
+  void edited({
+    required String subject,
+    Map<String, Object>? parameters,
+  }) =>
+      _logAnalytic(
+        Analytic(
+          subject: subject,
+          parameters: parameters,
+          type: AnalyticsTypes.edited,
+        ),
+      );
+
+  /// Sends an [AnalyticsTypes.assigned] based on given [subject] and possible [parameters].
+  void assigned({
+    required String subject,
+    Map<String, Object>? parameters,
+  }) =>
+      _logAnalytic(
+        Analytic(
+          subject: subject,
+          parameters: parameters,
+          type: AnalyticsTypes.assigned,
+        ),
+      );
+
+  /// Sends an [AnalyticsTypes.unassigned] based on given [subject] and possible [parameters].
+  void unassigned({
+    required String subject,
+    Map<String, Object>? parameters,
+  }) =>
+      _logAnalytic(
+        Analytic(
+          subject: subject,
+          parameters: parameters,
+          type: AnalyticsTypes.unassigned,
         ),
       );
 
@@ -1240,7 +1283,8 @@ class AnalyticsService {
     required String subject,
   }) {
     final name = subject;
-    _eventBus.tryAddAnalytic(Loglytics._analyticsInterface?.setCurrentScreen(name: name));
+    _eventBus.tryAddAnalytic(
+        Loglytics._analyticsInterface?.setCurrentScreen(name: name));
     _log?.analytic(
       name: '[SCREEN] $name',
       addToCrashReports: Loglytics._addAnalyticsToCrashReports,
@@ -1248,7 +1292,8 @@ class AnalyticsService {
   }
 
   /// Resets all current analytics data.
-  Future<void> resetAnalytics() async => Loglytics._analyticsInterface?.resetAnalyticsData();
+  Future<void> resetAnalytics() async =>
+      Loglytics._analyticsInterface?.resetAnalyticsData();
 
   /// Resets the [_firstInput] used by [AnalyticsService.input].
   void resetFirstInput() => _firstInput = null;
@@ -1257,8 +1302,8 @@ class AnalyticsService {
   void _logAnalytic(Analytic analytic) {
     final name = analytic.name;
     final parameters = analytic.parameters;
-    _eventBus.tryAddAnalytic(
-        Loglytics._analyticsInterface?.logEvent(name: name, parameters: parameters));
+    _eventBus.tryAddAnalytic(Loglytics._analyticsInterface
+        ?.logEvent(name: name, parameters: parameters));
     _log?.analytic(
       name: name,
       parameters: parameters,

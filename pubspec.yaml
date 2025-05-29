@@ -1,7 +1,7 @@
 name: loglytics
 description: An efficient, user-friendly way to implement logs, analytics and crash reports into your projects.
-version: 0.15.0
-homepage: https://github.com/codaveto/loglytics
+version: 0.16.0
+homepage: https://github.com/its-brianwithai/loglytics
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
@@ -15,6 +15,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 
 flutter:

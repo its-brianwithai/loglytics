@@ -52,6 +52,9 @@ enum AnalyticsTypes {
   updated,
   deleted,
   added,
+  edited,
+  assigned,
+  unassigned,
   removed,
   subscribed,
   unsubscribed,
@@ -150,6 +153,9 @@ extension AnalyticsTypesHelpers on AnalyticsTypes {
       case AnalyticsTypes.updated:
       case AnalyticsTypes.deleted:
       case AnalyticsTypes.added:
+      case AnalyticsTypes.edited:
+      case AnalyticsTypes.assigned:
+      case AnalyticsTypes.unassigned:
       case AnalyticsTypes.removed:
       case AnalyticsTypes.subscribed:
       case AnalyticsTypes.unsubscribed:
@@ -203,5 +209,6 @@ extension AnalyticsTypesHelpers on AnalyticsTypes {
     required String subject,
     Map<String, Object>? parameters,
   }) =>
-      Analytic(subject: subject, type: this, parameters: parameters).toCustomAnalytic;
+      Analytic(subject: subject, type: this, parameters: parameters)
+          .toCustomAnalytic;
 }
