@@ -18,7 +18,7 @@ part 'event_bus.dart';
 /// add the [Loglytics] mixin to any class where you would like to add logging and/or analytics to.
 /// In order to have access to the appropriate [Analytics] implementation for a specific
 /// feature or part of your project you should add the implementation as generic arguments to a
-/// [Loglytics] like Loglytics<CounterAnalytics>.
+/// [Loglytics] like `Loglytics<CounterAnalytics>`.
 ///
 /// Defining the generic [Analytics] is optional however as the [Loglytics] will also work without
 /// it. When no generic is specified you can even use our basic analytic functionality through the

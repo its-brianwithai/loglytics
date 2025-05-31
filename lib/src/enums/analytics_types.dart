@@ -60,6 +60,7 @@ enum AnalyticsTypes {
   unsubscribed,
   changed,
   denied,
+  granted,
   skipped,
   checked,
   unchecked,
@@ -161,6 +162,7 @@ extension AnalyticsTypesHelpers on AnalyticsTypes {
       case AnalyticsTypes.unsubscribed:
       case AnalyticsTypes.changed:
       case AnalyticsTypes.denied:
+      case AnalyticsTypes.granted:
       case AnalyticsTypes.skipped:
       case AnalyticsTypes.checked:
       case AnalyticsTypes.unchecked:

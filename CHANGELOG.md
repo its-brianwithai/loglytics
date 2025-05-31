@@ -1,3 +1,7 @@
+## 0.16.1
+
+* **✨ New:** Added `AnalyticsTypes.granted` for notification permission granted events.
+
 ## 0.16.0
 
 * **✨ New:** Added `AnalyticsTypes.edited` with corresponding `AnalyticsService.edited()` method.
